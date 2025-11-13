@@ -1,0 +1,26 @@
+.editable-table-input, .editable-table-select {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: #393838;
+    border: 1px solid #19191973;
+    color: #e0e0e0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.editable-table-input:focus, .editable-table-select:focus {
+    outline: none;
+    border-color: #1877f2;
+}
+
+.save-button {
+    background-color: #1f8a3559;
+    border: none;
+}
+.save-button:hover {
+    background-color: #1f8a3524;
+}
+.save-button:active {
+    background-color: #1f8a3559;
+}

@@ -1,0 +1,105 @@
+.main-content {
+    margin-left: 380px;
+    padding: 2rem;
+}
+
+.dashboard-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.info-item {
+    background-color: #1e1e1e;
+    padding: 0.3rem 2.3rem;
+    width: 18rem;
+    margin-right: 1rem;
+    border-radius: 1.5rem;
+    border: #36363673 solid 2px;
+}
+
+
+.info-item:hover {
+    box-shadow: 2px 2px 1px #393939;
+}
+
+
+
+#client-count,
+#vehicle-count,
+#pending-count,
+#completed-count {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 1.3rem 0px;
+    color: #0f8c0f;
+}
+
+.info-p {
+    color: #7d7d7d;
+    margin-bottom: 2rem;
+}
+
+.container-shortcuts {
+    background-color: #1e1e1e;
+    width: 45rem;
+    height: 30rem;
+    border-radius: 1.5rem;
+    padding: 0.5rem 2.3rem;
+    border: #36363673 solid 2px;
+}
+
+
+.container-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-size: 1.2rem;
+    padding: 1.3rem 1.5rem;
+    border-radius: 1rem;
+    background-color: #ffffff00;
+    color: white;
+    border: #44444473 solid 3px;
+}
+
+.button:hover {
+    background-color: #44444473;
+}
+
+.button:active {
+    background-color: #ffffff00;
+}
+
+.orders-button {
+    background-color: #f7141459;
+    border: none;
+}
+
+.orders-button:hover {
+    background-color: #f7141424;
+}
+
+.orders-button:active {
+    background-color: #f7141459;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services {
+    font-size: 1.3rem;
+    border-bottom: 2px solid #44444473;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.online-status {
+    background-color: #0f8c0f55;
+    padding: 0.5rem;
+    border-radius: 3rem;
+}

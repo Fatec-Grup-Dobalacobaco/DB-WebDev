@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Ordens de Serviço</title>
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="stylesheet" href="../css/os.css">
+    <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="sidebar">
+            
+            <div class="sidebar-logo">
+                <img src="../imagens/Logo.png" alt="Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a>
+                </li>
+                <li>
+                    <a href="veiculos.html"><i class="fa-solid fa-car"></i>Veiculos</a>
+                </li>
+                <li>
+                    <a href="funcionarios.html"><i class="fa-regular fa-address-card"></i>Funcionarios</a>
+                </li>
+                <li>
+                    <a href="triagem.html"><i class="fa-solid fa-clipboard-list"></i>Triagem</a>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-headset"></i>Ordens de serviço</a>
+                </li>
+                <li>
+                    <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>© 2025 LTDA AutoCheck</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="title">Ordens de Serviço</h1>
+        <h2 class="sub-title">Visualização e gerenciamento de ordens ativas</h2>
+        
+        <section class="style-search-container">
+            <h2 class="dashboard-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Ordens de Serviço</h2>
+            <form action="#" class="search-container" method="post">
+                <input 
+                    type="search" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Buscar por placa ou ID do funcionário">
+                
+                <button type="submit" class="search-button">Pesquisar</button>
+            </form>
+        </section>
+
+        <section class="style-search-container">
+            <h2 class="dashboard-title"><i class="fa-solid fa-list"></i>Ordens de Serviço Ativas</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Ordem</th>
+                        <th>Placa</th>
+                        <th>ID Funcionário</th>
+                        <th>Status</th>
+                        <th>Valor (R$)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-line">
+                        <td class="table-cellula">01</td>
+                        
+                        <td class="table-cellula">ABC1D23</td>
+                        <td class="table-cellula">01</td>
+                        
+                        <td class="table-cellula">
+                            <select name="status" class="editable-table-select">
+                                <option value="pendente" selected>Pendente</option>
+                                <option value="concluido">Concluído</option>
+                            </select>
+                        </td>
+                        
+                        <td class="table-cellula">
+                            <input type="number" name="valor" value="150.00" step="0.01" min="0" class="editable-table-input">
+                        </td>
+                        
+                        <td class="table-cellula table-cellula-buttons">
+                            <button class="button save-button">Salvar</button>
+                        </td>
+                    </tr>
+                    
+                    <tr class="table-line">
+                        <td class="table-cellula">02</td>
+                        
+                        <td class="table-cellula">XYZ9F87</td>
+                        <td class="table-cellula">02</td>
+                        
+                        <td class="table-cellula">
+                            <select name="status" class="editable-table-select">
+                                <option value="pendente">Pendente</option>
+                                <option value="concluido" selected>Concluído</option>
+                            </select>
+                        </td>
+                        
+                        <td class="table-cellula">
+                            <input type="number" name="valor" value="475.50" step="0.01" min="0" class="editable-table-input">
+                        </td>
+                        
+                        <td class="table-cellula table-cellula-buttons">
+                            <button class="button save-button">Salvar</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            
+            <div class="prox-ant-container">
+                <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
+                <button class="button">Proxima  <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

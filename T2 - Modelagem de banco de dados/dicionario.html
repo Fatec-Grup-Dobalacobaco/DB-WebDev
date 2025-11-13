@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionário de Dados</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        thead {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tbody tr:hover {
+            background-color: #f1f3f5;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+        .key {
+            font-weight: bold;
+        }
+        .key-pk {
+            color: #28a745;
+        }
+        .key-fk {
+            color: #dc3545;
+        }
+        .key-unique {
+            color: #17a2b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dicionário de Dados</h1>
+
+        <h2>👤 Cliente</h2>
+        <p>Armazena informações sobre os clientes.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Obrigatoriedade</th>
+                    <th>Chave</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id_cliente</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-pk">Primary Key</td>
+                    <td>Identificador único do cliente</td>
+                </tr>
+                <tr>
+                    <td><code>nome_cliente</code></td>
+                    <td>text</td>
+                    <td>100</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Nome completo</td>
+                </tr>
+                <tr>
+                    <td><code>cpf_cliente</code></td>
+                    <td>char</td>
+                    <td>12</td>
+                    <td>Sim</td>
+                    <td class="key key-unique">Único</td>
+                    <td>CPF do cliente</td>
+                </tr>
+                <tr>
+                    <td><code>telefone_cliente</code></td>
+                    <td>char</td>
+                    <td>12</td>
+                    <td>Não</td>
+                    <td>-</td>
+                    <td>Telefone para contato</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🚗 Veículo</h2>
+        <p>Armazena informações sobre os veículos dos clientes.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Obrigatoriedade</th>
+                    <th>Chave</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>placa_carro</code></td>
+                    <td>char</td>
+                    <td>8</td>
+                    <td>Sim</td>
+                    <td class="key key-pk">Primary Key</td>
+                    <td>Identificador único do carro</td>
+                </tr>
+                <tr>
+                    <td><code>id_cliente</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Cliente (Cliente.id_cliente)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>👥 Funcionário</h2>
+        <p>Armazena informações sobre os funcionários.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Obrigatoriedade</th>
+                    <th>Chave</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id_funcionario</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-pk">Primary Key</td>
+                    <td>Identificador único do funcionário</td>
+                </tr>
+                <tr>
+                    <td><code>nome_funcionario</code></td>
+                    <td>char</td>
+                    <td>50</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Nome completo</td>
+                </tr>
+                <tr>
+                    <td><code>telefone_funcionario</code></td>
+                    <td>char</td>
+                    <td>12</td>
+                    <td>Não</td>
+                    <td>-</td>
+                    <td>Telefone para contato</td>
+                </tr>
+                <tr>
+                    <td><code>id_funcoes</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Funções (Funções.id_funcoes)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🏷️ Funções</h2>
+        <p>Define as funções ou cargos dos funcionários.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Obrigatoriedade</th>
+                    <th>Chave</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id_funcoes</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-pk">Primary Key</td>
+                    <td>Identificado único da função</td>
+                </tr>
+                <tr>
+                    <td><code>nome_funcao</code></td>
+                    <td>char</td>
+                    <td>50</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Nome da Função</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🔧 Ordem de Serviço</h2>
+        <p>Registra as ordens de serviço abertas.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Obrigatoriedade</th>
+                    <th>Chave</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id_ordem_de_servico</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-pk">Primary Key</td>
+                    <td>Identificador único da O.S.</td>
+                </tr>
+                <tr>
+                    <td><code>valor_servico</code></td>
+                    <td>decimal</td>
+                    <td>10</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Valor do Serviço (Reparo, Peças e M.O.)</td>
+                </tr>
+                <tr>
+                    <td><code>status_servico</code></td>
+                    <td>text</td>
+                    <td>20</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Status da O.S.</td>
+                </tr>
+                <tr>
+                    <td><code>id_funcionario</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Funcionário (Funcionário.id_funcionario)</td>
+                </tr>
+                <tr>
+                    <td><code>placa_carro</code></td>
+                    <td>char</td>
+                    <td>8</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Veículo (Veículo.placa_carro)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📋 Triagem</h2>
+        <p>Detalha a avaliação inicial (triagem) feita no veículo.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Tamanho</th>
+                    <th>Obrigatoriedade</th>
+                    <th>Chave</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>id_triagem</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-pk">Primary Key</td>
+                    <td>Identificador único da triagem</td>
+                </tr>
+                <tr>
+                    <td><code>data_triagem</code></td>
+                    <td>date</td>
+                    <td>8</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Data da realização da triagem</td>
+                </tr>
+                <tr>
+                    <td><code>problema</code></td>
+                    <td>text</td>
+                    <td>400</td>
+                    <td>Sim</td>
+                    <td>-</td>
+                    <td>Descrição do problema encontrado</td>
+                </tr>
+                <tr>
+                    <td><code>id_funcionario</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Funcionário (Funcionário.id_funcionario)</td>
+                </tr>
+                <tr>
+                    <td><code>placa_carro</code></td>
+                    <td>char</td>
+                    <td>8</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Veículo (Veículo.placa_carro)</td>
+                </tr>
+                <tr>
+                    <td><code>id_ordem_de_servico</code></td>
+                    <td>int</td>
+                    <td>11</td>
+                    <td>Sim</td>
+                    <td class="key key-fk">Foreign Key</td>
+                    <td>Referência a Ordem de Serviço (Ordem de Serviço.id_ordem_de_servico)</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

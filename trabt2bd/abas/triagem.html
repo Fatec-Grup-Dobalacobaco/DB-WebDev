@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Triagem</title>
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/clientes.css">
+    <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="sidebar">
+            
+            <div class="sidebar-logo">
+                <img src="../imagens/Logo.png" alt="Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="clientes.html"><i class="fa-solid fa-users"></i>Clientes</a>
+                </li>
+                <li>
+                    <a href="veiculos.html"><i class="fa-solid fa-car"></i>Veiculos</a>
+                </li>
+                <li>
+                    <a href="funcionarios.html"><i class="fa-regular fa-address-card"></i>Funcionarios</a>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-clipboard-list"></i>Triagem</a>
+                </li>
+                <li>
+                    <a href="ordemdeservico.html"><i class="fa-solid fa-headset"></i>Ordens de serviço</a>
+                </li>
+                <li>
+                    <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>© 2025 LTDA AutoCheck</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="title">Formulário de Triagem</h1>
+        <h2 class="sub-title">Preenchimento do problema e encaminhamento</h2>
+        
+        <section class="style-search-container">
+            <h2 class="dashboard-title"><i class="fa-solid fa-file-signature"></i>Registrar Nova Triagem</h2>
+
+            <form action="#" method="post" class="container-client-form">
+
+                <div class="register-container">
+                    
+                    <div class="input-container">
+                        <label for="id_funcionario">ID do Funcionário</label>
+                        <input type="number" name="id_funcionario" id="id_funcionario" placeholder="ID do mecânico/atendente">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="placa_carro">Placa do Carro</label>
+                        <input type="text" name="placa_carro" id="placa_carro" placeholder="Ex: ABC1D23">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="data_triagem">Data da Triagem</label>
+                        <input type="date" name="data_triagem" id="data_triagem">
+                    </div>
+
+                </div>
+
+                <div class="input-container">
+                    <label for="problema">Descrição do Problema</label>
+                    <textarea 
+                        name="problema" 
+                        id="problema" 
+                        rows="8" 
+                        placeholder="Descreva em detalhes o problema relatado pelo cliente..." 
+                        style="width: 100%; font-size: 1.2rem; padding: 1rem; border-radius: 0.5rem; background-color: #393838; border: 1px solid #19191973; color: #e0e0e0; box-sizing: border-box; font-family: Arial, sans-serif;"
+                    ></textarea>
+                </div>
+                
+                <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Registrar Triagem</button>
+
+            </form>
+        </section>
+
+        </main>
+</body>
+</html>

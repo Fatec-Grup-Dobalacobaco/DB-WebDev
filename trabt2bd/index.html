@@ -13,7 +13,7 @@
             <img src="imagens/Logo.png" alt="Logo da Empresa">
         </div>
         
-        <form action="#" id="login-form" method="post">
+        <form id="login-form" method="post">
             <h2>Acesse sua conta</h2>
             
             <div class="input-group">
@@ -29,5 +29,17 @@
             <button type="submit" class="login-button">Entrar</button>
         </form>
     </div>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const usuario = document.getElementById("Nome").value;
+            const senha = document.getElementById("password").value;
+
+            console.log(`Usuário digitado: ${usuario}`);
+            console.log(`Senha digitada: ${senha}`);
+            window.location.href = "./abas/dashboard.html";
+        });
+    </script>
 </body>
 </html>

@@ -90,7 +90,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Placa</th>
                         <th>ID Cliente</th>
                         <th>Ações</th>
@@ -98,7 +97,6 @@
                 </thead>
                 <tbody>
                     <tr class="table-line">
-                        <td class="table-cellula">01</td>
                         <td class="table-cellula">ABC1D23</td>
                         <td class="table-cellula">01</td>
                         <td class="table-cellula table-cellula-buttons">
@@ -116,5 +114,31 @@
             </div>
         </section>
     </main>
+
+    <script>
+        async function fetchVeiculos() {
+            try {
+                const response = await fetch('api/veiculos/');
+                const data = await response.json();
+                console.log(data);
+
+            for (const veiculo of data) {
+                console.log(`Placa: ${veiculo.placa}, ID Cliente: ${veiculo.id_cliente}`);
+                const trVeiculo = document.createElement('tr');
+                trVeiculo.innerHTML = `
+                    <td class="table-cellula">${veiculo.placa}</td>
+                    <td class="table-cellula">${veiculo.id_cliente}</td>
+                    <td class="table-cellula table-cellula-buttons">
+                        <button class="button">Editar</button>
+                        <button class="button">Excluir</button>
+                    </td>
+                `;
+            }
+            } catch (error) {
+                console.error('Erro ao buscar veículo:', error);
+            }
+        }
+        fetchVeiculos();
+    </script>
 </body>
 </html>

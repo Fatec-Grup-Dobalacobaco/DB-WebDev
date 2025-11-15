@@ -100,7 +100,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nome</th>
                         <th>CPF</th>
                         <th>Telefone</th>
@@ -109,7 +108,6 @@
                 </thead>
                 <tbody>
                     <tr class="table-line">
-                        <td class="table-cellula">01</td>
                         <td class="table-cellula">Carlos</td>
                         <td class="table-cellula">90015195805</td>
                         <td class="table-cellula">11978509865</td>
@@ -124,9 +122,37 @@
             
             <div class="prox-ant-container">
                 <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
-                <button class="button">Proxima  <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="button">Proxima<i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </section>
     </main>
+
+    <script>
+        async function fetchClientes() {
+            try {
+                const response = await fetch('api/clientes/listar');
+                const data = await response.json();
+                console.log(data);
+
+            for (const cliente of data) {
+                console.log(`Cliente: ${client.nome}, CPF: ${client.cpf}, Telefone: ${client.telefone}`);
+                const trCliente = document.createElement('tr');
+                trCliente.innerHTML = `
+                    <td class="table-cellula">${cliente.nome}</td>
+                    <td class="table-cellula">${cliente.cpf}</td>
+                    <td class="table-cellula">${cliente.telefone}</td>
+                    <td class="table-cellula table-cellula-buttons">
+                        <button class="button">Editar</button>
+                        <button class="button">Excluir</button>
+                    </td>
+                `;
+                document.querySelector('tbody').appendChild(trCliente);
+            }
+            } catch (error) {
+                console.error('Erro ao buscar clientes:', error);
+            }
+        }
+        fetchClientes();
+    </script>
 </body>
 </html>

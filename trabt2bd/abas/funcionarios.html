@@ -53,13 +53,13 @@
         
         <section class="style-search-container">
             <h2 class="dashboard-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Funcionários</h2>
-            <form action="#" class="search-container" method="post">
+            <form action="#" class="search-container" method="post" id="searchForm">
                 
                 <input 
                     type="search" 
                     id="search-input" 
                     class="search-input" 
-                    placeholder="Buscar por nome"> <button type="submit" class="search-button">Pesquisar</button>
+                    placeholder="Buscar por nome"> <button type="submit"     class="search-button">Pesquisar</button>
             </form>
         </section>
 
@@ -89,32 +89,19 @@
             </form>
         </section>
 
-        <section class="style-search-container">
+        <section class="style-search-container" id="funcContainer">
             <h2 class="dashboard-title"><i class="fa-solid fa-list"></i>Funcionários Cadastrados</h2>
 
-            <table>
+            <table >
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nome</th>
                         <th>Telefone</th>
-                        <th>ID Função</th>
-                        <th>Ações</th>
+                        <th>Função</th>
+        
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="table-line">
-                        <td class="table-cellula">01</td>
-                        <td class="table-cellula">Ana Beatriz</td>
-                        <td class="table-cellula">(11) 98888-7777</td>
-                        <td class="table-cellula">01</td>
-                        <td class="table-cellula table-cellula-buttons">
-                            <button class="button">Editar</button>
-                            <button class="button">Excluir</button>
-                        </td>
-                    </tr>
-                    
-                </tbody>
+                <tbody id="tabelaFuncs"></tbody>
             </table>
             
             <div class="prox-ant-container">
@@ -125,15 +112,70 @@
     </main>
 
 
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script> 
-        
+<script> 
 
+let todosFuncionarios = [];
 
+async function listar() { 
+    try {
+        const response = await fetch("https://fatecbackend.vercel.app/api/funcionarios/listar");
+        return await response.json();
+    } catch (e) {
+        console.error(e);
+        return [];
+    }
+}
 
+function createTable(obj){
+    var tbody = $('#tabelaFuncs');
+    tbody.empty();
 
+    var rows = "";
+    obj.forEach(el => {
+        rows += "<tr>";
+        if(el.nome_funcionario) rows += "<td>" + el.nome_funcionario + "</td>";
+        if(el.telefone_funcionario) rows += "<td>" + el.telefone_funcionario + "</td>";
+        if(el.funcao) rows += "<td>" + el.funcao + "</td>";
+        rows += "</tr>";
+    });
 
-        
-    </script> 
+    tbody.append(rows);
+}
+
+function filtrarFuncionarios(termo) {
+    if(!termo || termo.trim() === '') {
+        createTable(todosFuncionarios);
+        return;
+    }
+
+    const termoLower = termo.toLowerCase().trim();
+    const funcionariosFiltrados = todosFuncionarios.filter(func => {
+        return func.nome_funcionario && 
+               func.nome_funcionario.toLowerCase().includes(termoLower);
+    });
+
+    createTable(funcionariosFiltrados);
+}
+
+listar().then(data => {
+    console.log(data);
+    todosFuncionarios = data;
+    createTable(data);
+});
+
+$('#searchForm').on('submit', function(e) {
+    e.preventDefault();
+    const termoBusca = $('#search-input').val();
+    filtrarFuncionarios(termoBusca);
+});
+
+$('#search-input').on('input', function() {
+    const termoBusca = $(this).val();
+    filtrarFuncionarios(termoBusca);
+});
+
+</script>
 </body>
 </html>

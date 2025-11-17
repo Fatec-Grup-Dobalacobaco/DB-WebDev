@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AutoCheck</title>
+    <link rel="shortcut icon" href="../imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/clientes.css">
+    <script src="https://kit.fontawesome.com/847d97f27f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="sidebar">
+            
+            <div class="sidebar-logo">
+                <img src="../imagens/Logo.png" alt="Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-users"></i>Clientes</a>
+                </li>
+                <li>
+                    <a href="veiculos.html"><i class="fa-solid fa-car"></i>Veiculos</a>
+                </li>
+                <li>
+                    <a href="funcionarios.html"><i class="fa-regular fa-address-card"></i>Funcionarios</a>
+                </li>
+                <li>
+                    <a href="triagem.html"><i class="fa-solid fa-clipboard-list"></i>Triagem</a>
+                </li>
+                <li>
+                    <a href="ordemdeservico.html"><i class="fa-solid fa-headset"></i>Ordens de serviço</a>
+                </li>
+                <li>
+                    <a href="#" class="leave"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <p>© 2025 LTDA AutoCheck</p>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1 class="title">Gerenciador de clíentes</h1>
+        <h2 class="sub-title">Cadastro e gerenciamento de clíentes</h2>
+        
+        <section class="style-search-container">
+            <h2 class="dashboard-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar clientes</h2>
+            <form action="#" class="search-container" method="post">
+                
+                <input 
+                    type="search" 
+                    id="search-input" 
+                    class="search-input" 
+                    placeholder="Buscar por nome ou CPF">
+                
+                <button type="submit" class="search-button">Pesquisar</button>
+            </form>
+        </section>
+
+        <section class="style-search-container">
+            <form action="#" method="post" class="container-client-form">
+
+                <div class="register-container">
+                    
+                    <div class="input-container">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome e sobrenome">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="cpf">CPF</label>
+                        <input type="number" name="cpf" id="cpf" placeholder="Digite seu CPF">
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="tel">Telefone</label>
+                        <input type="number" name="tel" id="tel" placeholder="Digite seu telefone">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="password">Senha</label>
+                        <input type="password" name="password" id="password" placeholder="Min. 6 caracteres">
+                    </div>
+                </div> <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Cadastrar cliente</button>
+
+            </form>
+        </section>
+
+        <section class="style-search-container">
+            <h2 class="dashboard-title"><i class="fa-solid fa-list"></i>Clientes cadastrados</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados dos clientes serão inseridos aqui dinamicamente -->
+                </tbody>
+            </table>
+            
+            <div class="prox-ant-container">
+                <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
+                <button class="button">Proxima<i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        async function fetchClientes() {
+            try {
+                const response = await fetch('https://fatecbackend.vercel.app/api/clientes/listar');
+                const data = await response.json();
+
+            for (const cliente of data) {
+                const trCliente = document.createElement('tr');
+                trCliente.classList.add('table-line');
+                trCliente.innerHTML = `
+                    <td class="table-cellula">${cliente.nome_cliente}</td>
+                    <td class="table-cellula">${cliente.cpf_cliente}</td>
+                    <td class="table-cellula">${cliente.telefone_cliente}</td>
+                    <td class="table-cellula table-cellula-buttons">
+                        <button class="button">Editar</button>
+                        <button class="button">Excluir</button>
+                    </td>
+                `;
+                document.querySelector('tbody').appendChild(trCliente);
+            }
+            } catch (error) {
+                console.error('Erro ao buscar clientes:', error);
+            }
+        }
+        fetchClientes();
+    </script>
+</body>
+</html>

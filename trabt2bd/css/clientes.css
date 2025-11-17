@@ -1,0 +1,122 @@
+.main-content {
+    margin-left: 380px;
+    padding: 3rem;
+}
+.style-search-container {
+    background-color: #1a1a1a;
+    padding: 1.3rem;
+    border-radius: 1.3rem;
+    border: #36363673 solid 2px;
+    margin-bottom: 2rem;
+}
+
+/* 1. O container do formulário */
+.search-container {
+    position: relative; /* Essencial para posicionar o ícone */
+    margin-bottom: 2rem;
+    background-color: #1a1a1a;
+    padding: 2rem;
+}
+
+/* 2. O campo de input */
+.search-input {
+    width: 100%; /* Ocupa todo o espaço do container */
+    padding: 1.3rem 1rem; /* Espaçamento interno */
+    
+    /* Espaçamento interno à esquerda para dar lugar ao ícone */
+    padding-left: 40px; 
+    background-color: #393838;
+    font-size: 1.3rem;
+    border: 1px solid #19191973;
+    border-radius: 0.5rem;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+.search-input:focus {
+    border: 1px solid #19191973;
+}
+
+/* 3. O ícone */
+.search-icon {
+    position: absolute; /* Posiciona o ícone sobre o input */
+    
+    /* Alinha o ícone */
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    
+    color: #888; /* Cor do ícone */
+}
+
+/* 4. O botão de pesquisa (decidimos escondê-lo) */
+.search-button {
+    display: none; /* Esconde o botão, a pesquisa funciona com "Enter" */
+}
+
+.container-client-form {
+    padding: 2rem;
+}
+
+.register-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    font-size: 1.2rem;
+    padding: 1.3rem 1.5rem;
+    border-radius: 1rem;
+    background-color: #ffffff00;
+    color: white;
+    border: #44444473 solid 3px;
+}
+
+.button:hover {
+    background-color: #44444473;
+}
+
+.button:active {
+    background-color: #ffffff00;
+}
+
+.orders-button {
+    background-color: #f7141459;
+    border: none;
+}
+
+.orders-button:hover {
+    background-color: #f7141424;
+}
+
+.orders-button:active {
+    background-color: #f7141459;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.input-container input {
+    width: 23rem; /* Ocupa todo o espaço do container */
+    padding: 1.3rem 1rem; /* Espaçamento interno */
+    
+    /* Espaçamento interno à esquerda para dar lugar ao ícone */
+    padding-left: 40px; 
+    background-color: #393838;
+    font-size: 1.3rem;
+    border: 1px solid #19191973;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+.input-container label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.prox-ant-container {
+    display: flex;
+}

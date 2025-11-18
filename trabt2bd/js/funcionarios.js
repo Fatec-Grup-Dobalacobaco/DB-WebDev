@@ -1,13 +1,13 @@
 async function Main(){
     const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
     const funcionarios = await response.json();
+    console.log(funcionarios)
     return funcionarios;
 }
 const funcionarios = Main();
 
     async function atualizarLista(funcionarios){
         try {
-            console.log(funcionarios)
             document.getElementById('tabelaFuncs').innerHTML = '';
             for (const funcionario of funcionarios) {
                 const trFuncionario = document.createElement('tr');

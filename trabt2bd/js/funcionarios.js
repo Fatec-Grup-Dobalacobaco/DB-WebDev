@@ -13,10 +13,11 @@
                     <td class="table-cellula">${funcionario.funcao}</td>
                     <td class="table-cellula table-cellula-buttons">
                         <button class="button">Editar</button>
-                        <button class="button" onclick="removerFuncionario(${funcionario.id_funcionario})">Excluir</button>
+                        <button class="button" id="btn-excluir-${funcionario.id_funcionario}">Excluir</button>
                     </td>
                 `;
                 document.getElementById('tabelaFuncs').appendChild(trFuncionario);
+                document.getElementById(`btn-excluir-${funcionario.id_funcionario}`).addEventListener('click', () => removerFuncionario(funcionario.id_funcionario));
             }
         } catch (error) {
             console.error('Erro ao buscar funcionários:', error);

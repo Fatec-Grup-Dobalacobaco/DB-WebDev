@@ -14,7 +14,6 @@ const funcao = await responseFun.json();
                         </select>           
             
             */
-           console.log(funcao);
             for (const funcionario of funcionarios) {
                 const selectFuncao = document.createElement('select');
                 selectFuncao.name = "nomeFuncao";

@@ -106,3 +106,14 @@ document.getElementById('add-client-form').addEventListener('submit', function(e
     event.preventDefault();
     adicionarCliente();
 });
+//adicionar funcao de busca no input de busca fazendo filter na variavel clientes
+document.getElementById('search-input').addEventListener('input', function(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const filteredClientes = clientes.filter(cliente =>
+        cliente.nome_cliente.toLowerCase().includes(searchTerm) ||
+        cliente.cpf_cliente.toLowerCase().includes(searchTerm) ||
+        cliente.telefone_cliente.toLowerCase().includes(searchTerm)
+    );
+    document.querySelector('tbody').innerHTML = '';
+    fetchClientes(filteredClientes);
+});

@@ -150,7 +150,7 @@ const funcao = await responseFun.json();
                 const user = {
                     nome_funcionario: document.getElementById('nome_funcionario').value,
                     telefone_funcionario: document.getElementById('tel_funcionario').value,
-                    id_funcoes: document.getElementById('id_funcao').value
+                    id_funcoes: document.getElementById('nomeFuncaoNew').value
                 };
                 adicionarUsuario(user);
             })
@@ -187,5 +187,5 @@ const funcao = await responseFun.json();
         document.addEventListener('DOMContentLoaded', inicializarEventos);
     } else {
         inicializarEventos(funcionarios,funcao);
-        //NewFuncao(funcao);
+        NewFuncao(funcao);
     }

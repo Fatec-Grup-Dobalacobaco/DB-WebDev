@@ -86,28 +86,36 @@ async function removerVeiculo(placa) {
     }
 }
 //criar logica de adicionar veiculo
-document.getElementById('add-veiculo-button').addEventListener('click', adicionarVeiculo);
-async function adicionarVeiculo() {
+document.getElementById('add-veiculo-button').addEventListener('click', async event => {
+    event.preventDefault();
     try {
-        const placaVeiculo = document.getElementById(`placa`).value;
-        const idClienteVeiculo = document.getElementById(`id_cliente`).value;
-        const response = await fetch('https://fatecbackend.vercel.app/api/veiculos/adicionar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                placa_carro: placaVeiculo,
-                id_cliente: idClienteVeiculo
-            })
-        });
-        if (!response.ok) {
-            throw new Error('Erro ao adicionar veículo');
+            const placaVeiculo = document.getElementById(`placa`).value;
+            const idClienteVeiculo = document.getElementById(`clientesSelec`).value;
+            const response = await fetch('https://fatecbackend.vercel.app/api/veiculos/adicionar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    placa_carro: placaVeiculo,
+                    id_cliente: idClienteVeiculo
+                })
+            });
+            if (!response.ok) {
+                throw new Error('Erro ao adicionar veículo');
+            }
+            alert('Veículo adicionado com sucesso!');
+            location.reload();
+        } catch (error) {
+            console.error('Erro ao adicionar veículo:', error);
+            alert('Erro ao adicionar veículo.');
         }
-        alert('Veículo adicionado com sucesso!');
-        location.reload();
-    } catch (error) {
-        console.error('Erro ao adicionar veículo:', error);
-        alert('Erro ao adicionar veículo.');
-    }
-}
+});
+//no form adicionar veiculos popular clientesSelec com clientes usando a variavel clientes
+const clientesSelec = document.getElementById('clientesSelec');
+clientes.forEach(cliente => {
+    const option = document.createElement('option');
+    option.value = cliente.id_cliente;
+    option.text = cliente.nome_cliente;
+    clientesSelec.appendChild(option);
+});

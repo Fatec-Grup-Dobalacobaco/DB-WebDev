@@ -90,7 +90,7 @@
                                 name="problema" 
                                 id="problema" 
                                 rows="8" 
-                                class="form-textarea" /* Classe nova, style removido */
+                                class="form-textarea"
                                 placeholder="Descreva em detalhes o problema relatado pelo cliente..."
                             ></textarea>
                         </div>
@@ -99,6 +99,52 @@
                     <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Registrar Triagem</button>
 
                 </form>
+            </section>
+
+            <section class="card-container" id="funcContainer">
+                <h2 class="card-title"><i class="fa-solid fa-list"></i>Triagens Registradas</h2>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome do funcionario</th>
+                                <th>Problema</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaFunc">
+                            <tr>
+                                <td class="table-cellula">
+                                    01
+                                </td>
+                                <td class="table-cellula">
+                                    <select name="nomeFuncionario" class="editable-table-select">
+                                        <option value="dias">DIAS</option>
+                                        <option value="kauan" selected>KAUAN</option>
+                                    </select>
+                                </td>
+                                <td class="table-cellula">
+                                    <p>Problema no motor.</p>
+                                </td>
+                                <td class="table-cellula">
+                                    22/02/2007
+                                </td>
+                                <td class="table-cellula table-cellula-buttons">
+                                    <button class="button save-button">Tornar O.S</button>
+                                    <button class="button">Excluir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="prox-ant-container">
+                    <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
+                    <button class="button">Proxima <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
             </section>
             
             <footer class="main-footer">

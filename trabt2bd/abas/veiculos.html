@@ -79,8 +79,11 @@
                             <input type="text" name="placa" id="placa" placeholder="Digite a placa (ex: ABC1234)">
                         </div>
                         <div class="input-container">
-                            <label for="id_cliente">ID do Cliente</label>
-                            <input type="number" name="id_cliente" id="id_cliente" placeholder="Digite o ID do dono">
+                            <label for="nomeCliente">ID do Cliente</label>
+                            <select name="nomeCliente" class="editable-table-select">
+                                    <option value="astoufo" selected>Astoufo</option>
+                                    <option value="dopaminongas">Dopaminongas</option>
+                            </select>
                         </div>
                     </div> 
                     
@@ -105,7 +108,7 @@
                         <tbody id="table-main">
                             <td class="table-cellula">ABX1K76</td>
                             <td class="table-cellula">
-                                <select name="nomeFuncao" class="editable-table-select">
+                                <select name="nomeFuncionario" class="editable-table-select">
                                         <option value="dias" selected>DIAS</option>
                                         <option value="kauan">KAUAN</option>
                                 </select>

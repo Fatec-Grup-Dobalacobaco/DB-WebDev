@@ -1,5 +1,9 @@
-const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
-const funcionarios = await response.json();
+async function Main(){
+    const response = await fetch('https://fatecbackend.vercel.app/api/funcionarios/listar');
+    const funcionarios = await response.json();
+    return funcionarios;
+}
+const funcionarios = Main();
 
     async function atualizarLista(funcionarios){
         try {

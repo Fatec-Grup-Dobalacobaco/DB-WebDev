@@ -57,47 +57,15 @@
             </header>
             
             <section class="card-container">
-                <h2 class="card-title"><i class="fa-solid fa-file-signature"></i>Registrar Nova Triagem</h2>
-
-                <form class="container-client-form">
-
-                    <div class="register-container">
-                        
-                        <div class="input-container">
-                            <label for="nomeFuncionario">Nome Funcionario</label>
-                            <select name="nomeFuncionario" class="editable-table-select">
-                                <option value="dias" selected>DIAS</option>
-                                <option value="kauan">KAUAN</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-container">
-                            <label for="placa_carro">Placa do Carro</label>
-                            <select name="placa_carro" class="editable-table-select">
-                                <option value="ABX1K12" selected>ABX1K12</option>
-                                <option value="OHU5O98">OHU5O98</option>
-                            </select>
-                        </div>
-                        
-                        <div class="input-container">
-                            <label for="data_triagem">Data da Triagem</label>
-                            <input type="date" name="data_triagem" id="data_triagem">
-                        </div>
-                        
-                        <div class="input-container full-width">
-                            <label for="problema">Descrição do Problema</label>
-                            <textarea 
-                                name="problema" 
-                                id="problema" 
-                                rows="8" 
-                                class="form-textarea"
-                                placeholder="Descreva em detalhes o problema relatado pelo cliente..."
-                            ></textarea>
-                        </div>
-                    </div>
-                    
-                    <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Registrar Triagem</button>
-
+                <h2 class="card-title"><i class="fa-solid fa-magnifying-glass"></i>Buscar Triagens</h2>
+                <form class="search-container" method="post" id="searchForm">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input 
+                        type="search" 
+                        id="search-input" 
+                        class="search-input" 
+                        placeholder="Buscar por placa ou nome do funcionário">
+                    <button type="submit" class="search-button">Pesquisar</button>
                 </form>
             </section>
 
@@ -145,6 +113,51 @@
                     <button class="button"><i class="fa-solid fa-arrow-left"></i>Anterior</button>
                     <button class="button">Proxima <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
+            </section>
+            
+            <section class="card-container">
+                <h2 class="card-title"><i class="fa-solid fa-file-signature"></i>Registrar Nova Triagem</h2>
+
+                <form class="container-client-form">
+
+                    <div class="register-container">
+                        
+                        <div class="input-container">
+                            <label for="nomeFuncionario">Nome Funcionario</label>
+                            <select name="nomeFuncionario" class="editable-table-select">
+                                <option value="dias" selected>DIAS</option>
+                                <option value="kauan">KAUAN</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="placa_carro">Placa do Carro</label>
+                            <select name="placa_carro" class="editable-table-select">
+                                <option value="ABX1K12" selected>ABX1K12</option>
+                                <option value="OHU5O98">OHU5O98</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="data_triagem">Data da Triagem</label>
+                            <input type="date" name="data_triagem" id="data_triagem">
+                        </div>
+                        
+                        <div class="input-container full-width">
+                            <label for="problema">Descrição do Problema</label>
+                            <textarea 
+                                name="problema" 
+                                id="problema" 
+                                rows="8" 
+                                class="form-textarea"
+                                placeholder="Descreva em detalhes o problema relatado pelo cliente..."
+                            ></textarea>
+                        </div>
+                    </div>
+                    
+                    <button class="orders-button button" type="submit"><i class="fa-solid fa-floppy-disk"></i>Registrar Triagem</button>
+
+                </form>
             </section>
             
             <footer class="main-footer">

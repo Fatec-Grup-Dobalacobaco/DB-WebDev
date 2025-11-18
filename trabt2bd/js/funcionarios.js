@@ -74,25 +74,26 @@ const funcionarios = await response.json();
             alert('Erro ao adicionar funcionário.');
         }
     }
-    document.getElementById("register-form").addEventListener("submit",event => {
-        event.preventDefault()
-        const user = {
-            nome_funcionario: document.getElementById('nome_funcionario').value,
-            telefone_funcionario: document.getElementById('tel_funcionario').value,
-            id_funcoes: document.getElementById('id_funcao').value
-        };
-        console.log(user)
-        adicionarUsuario(user);
-    })
-    document.getElementById("searchForm").addEventListener("submit",event => {
-        event.preventDefault()
-        console.log(document.getElementById('searchInput'))
-        const termoBusca = document.getElementById('searchInput').value.toLowerCase();
-        const funcionariosFiltrados = funcionarios.filter(funcionario => 
-            funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
-            funcionario.telefone_funcionario.toLowerCase().includes(termoBusca) ||
-            funcionario.funcao.toLowerCase().includes(termoBusca)
-        );
-        atualizarLista(funcionariosFiltrados);
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById("register-form").addEventListener("submit",event => {
+            event.preventDefault()
+            const user = {
+                nome_funcionario: document.getElementById('nome_funcionario').value,
+                telefone_funcionario: document.getElementById('tel_funcionario').value,
+                id_funcoes: document.getElementById('id_funcao').value
+            };
+            console.log(user)
+            adicionarUsuario(user);
+        })
+        document.getElementById("searchForm").addEventListener("submit",event => {
+            event.preventDefault()
+            const termoBusca = document.getElementById('searchInput').value.toLowerCase();
+            const funcionariosFiltrados = funcionarios.filter(funcionario => 
+                funcionario.nome_funcionario.toLowerCase().includes(termoBusca) ||
+                funcionario.telefone_funcionario.toLowerCase().includes(termoBusca) ||
+                funcionario.funcao.toLowerCase().includes(termoBusca)
+            );
+            atualizarLista(funcionariosFiltrados);
+        });
+        atualizarLista(funcionarios);
     });
-    atualizarLista(funcionarios);

@@ -82,7 +82,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <td class="table-cellula">
+                            <!--<td class="table-cellula">
                                 <input type="text" name="nomeCliente" id="nomeCliente" class="editable-table-input">
                             </td>
                             <td class="table-cellula">
@@ -94,7 +94,7 @@
                             <td class="table-cellula table-cellula-buttons">
                                 <button class="button save-button">Salvar</button>
                                 <button class="button">Excluir</button>
-                            </td>
+                            </td>-->
                         </tbody>
                     </table>
                 </div>
@@ -107,7 +107,7 @@
             
             <section class="card-container">
                 <h2 class="card-title"><i class="fa-solid fa-user-plus"></i>Cadastrar Novo Cliente</h2>
-                <form class="container-client-form">
+                <form class="container-client-form" id="add-client-form">
                     
                     <div class="register-container">
                         <div class="input-container">
@@ -137,38 +137,6 @@
         </div> 
     </main>
 
-    <!--<script>
-        async function fetchClientes() {
-            try {
-                const response = await fetch('https://fatecbackend.vercel.app/api/clientes/listar');
-                const data = await response.json();
-
-            for (const cliente of data) {
-                const trCliente = document.createElement('tr');
-                trCliente.classList.add('table-line');
-                trCliente.innerHTML = `
-                    <td class.table-cellula">${cliente.nome_cliente}</td>
-                    <td class="table-cellula">${cliente.cpf_cliente}</td>
-                    <td class="table-cellula">${cliente.telefone_cliente}</td>
-                    <td class="table-cellula table-cellula-buttons">
-                        <button class="button button-edit">Editar</button>
-                        <button class="button button-delete">Excluir</button>
-                    </td>
-                `;
-                document.querySelector('tbody').appendChild(trCliente);
-            }
-            } catch (error) {
-                console.error('Erro ao buscar clientes:', error);
-            }
-        }
-        fetchClientes();
-
-        // Script para o menu mobile (se for usar a lógica do hamburger)
-        // const menuToggle = document.getElementById('menu-toggle');
-        // const navLinks = document.getElementById('nav-links');
-        // menuToggle.addEventListener('click', () => {
-        //     navLinks.classList.toggle('open');
-        // });
-    </script>-->
+    <script type="module" src="../js/clientes.js"></script>
 </body>
 </html>

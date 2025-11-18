@@ -39,7 +39,7 @@ const funcao = await responseFun.json();
                         ${selectFuncao.outerHTML}
                     </td>
                     <td class="table-cellula table-cellula-buttons">
-                        <button class="button id="btn-salvar-${funcionario.id_funcionario}" save-button" >Salvar</button>
+                        <button class="button" id="btn-salvar-${funcionario.id_funcionario}" save-button" >Salvar</button>
                         <button class="button" id="btn-excluir-${funcionario.id_funcionario}">Excluir</button>
                     </td>
                 `;
@@ -49,6 +49,15 @@ const funcao = await responseFun.json();
             }
         } catch (error) {
             console.error('Erro ao buscar funcionários:', error);
+        }
+    }
+    async function NewFuncao(funcao) {
+        //adicionar options com os nomes das funcoes no id = "nomeFuncaoNew"
+        for (const func of funcao) {
+            const option = document.createElement('option');
+            option.value = func.id_funcoes;
+            option.textContent = func.nome_funcao;
+            document.getElementById('nomeFuncaoNew').appendChild(option);
         }
     }
     async function atualizarFuncionario(id){
@@ -178,4 +187,5 @@ const funcao = await responseFun.json();
         document.addEventListener('DOMContentLoaded', inicializarEventos);
     } else {
         inicializarEventos(funcionarios,funcao);
+        //NewFuncao(funcao);
     }

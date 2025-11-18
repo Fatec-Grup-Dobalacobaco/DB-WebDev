@@ -137,7 +137,7 @@ const funcao = await responseFun.json();
             }
 
             // atualizar a lista após remoção bem-sucedida
-            atualizarLista();
+            location.reload();
         } catch (error) {
             console.error('Erro ao remover funcionário:', error);
             alert('Erro ao remover funcionário. Verifique o console para mais detalhes.');
@@ -163,7 +163,7 @@ const funcao = await responseFun.json();
             }
 
             alert('Funcionário adicionado com sucesso!');
-            atualizarLista(funcionarios);
+            location.reload();
         } catch (error) {
             console.error('Erro ao adicionar funcionário:', error);
             alert('Erro ao adicionar funcionário.');

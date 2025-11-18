@@ -30,7 +30,7 @@ const funcao = await responseFun.json();
                 }
                 const trFuncionario = document.createElement('tr');
                 trFuncionario.classList.add('table-line');
-                trFuncionario.id = funcionario.id_funcionario;
+                trFuncionario.id = `idCliente${funcionario.id_funcionario}`;
                 
                 const tdNome = document.createElement('td');
                 tdNome.classList.add('table-cellula');
@@ -120,6 +120,7 @@ const funcao = await responseFun.json();
         }
     }
     async function removerFuncionario(id){
+        document.getElementById(`idCliente${id}`).parentNode.remove();
         try {
             const url = `https://fatecbackend.vercel.app/api/funcionarios/remover/${id}`;
             const response = await fetch(url, {
@@ -135,9 +136,6 @@ const funcao = await responseFun.json();
                 alert('Falha ao remover funcionário. Verifique o console para mais detalhes.');
                 return;
             }
-
-            // atualizar a lista após remoção bem-sucedida
-            location.reload();
         } catch (error) {
             console.error('Erro ao remover funcionário:', error);
             alert('Erro ao remover funcionário. Verifique o console para mais detalhes.');

@@ -7,7 +7,7 @@ async function fetchClientes(clientes) {
         const trCliente = document.createElement('tr');
         trCliente.classList.add('table-line');
         trCliente.innerHTML = `
-        <td class="table-cellula">
+        <td class="table-cellula" id="idCliente${cliente.id_cliente}">
                         <input type="text" name="nomeCliente" value="${cliente.nome_cliente}" id="nomeCliente${cliente.id_cliente}" class="editable-table-input">
                     </td>
                     <td class="table-cellula">
@@ -87,6 +87,8 @@ async function adicionarCliente() {
     }
 }
 async function removerCliente(id) {
+    //ao clicar em remover cliente apagar a linha da tabela antes de mandar o id para o backend
+    document.getElementById(`idCliente${id}`).parentNode.remove();
     try {
         const response = await fetch(`https://fatecbackend.vercel.app/api/clientes/remover/${id}`, {
             method: 'DELETE'
@@ -95,7 +97,6 @@ async function removerCliente(id) {
             throw new Error('Erro ao remover cliente');
         }
         alert('Cliente removido com sucesso!');
-        location.reload();
     } catch (error) {
         console.error('Erro ao remover cliente:', error);
         alert('Erro ao remover cliente.');

@@ -173,13 +173,17 @@ async function adicionarCliente(cliente) {
 // crie a parte de adicionar veiculos
 
 async function adicionarCarro(carro){
+    const {placa_carro , id_cliente} = carro
     try{
         const response = await fetch('https://fatecbackend.vercel.app/api/veiculos/adicionar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(carro)
+            body: JSON.stringify({
+                id_cliente: parseInt(id_cliente),
+                placa_carro
+            })
         });
     } catch {
         console.error('Erro ao adicionar Veiculo:',error)

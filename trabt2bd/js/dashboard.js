@@ -114,7 +114,7 @@ async function carregarClientes() {
         selectClientes.innerHTML = '<option value="">Selecione o cliente</option>';
         data.forEach(func => {
             const option = document.createElement('option');
-            option.value = func.cliente.id_cliente
+            option.value = func.id_cliente
             option.textContent = func.nome_cliente;
             selectClientes.appendChild(option);
         });
@@ -142,7 +142,7 @@ document.getElementById('formNovoCarro').addEventListener('submit', async (e) =>
     e.preventDefault();
     const carro = {
         placa_carro: document.getElementById('num-placa').value,
-        id_cliente: await obterIdClientePorNome(document.getElementById('selectClientes').value)
+        id_cliente: await document.getElementById('selectClientes').value
     };
     await adicionarCarro(carro);
 });

@@ -1,14 +1,16 @@
-# 🛠️ AutoCheck - Sistema de Gerenciamento Automotivo
+# 🛠️ AutoCheck - Gestão Inteligente Automotiva
 
-O **AutoCheck** é uma solução web desenvolvida para otimizar o fluxo de trabalho em oficinas mecânicas. O sistema permite o controle de acesso de funcionários e a gestão completa de clientes, veículos e ordens de serviço.
+O **AutoCheck** é um sistema completo de gestão para oficinas mecânicas, focado em organização, agilidade e excelência no atendimento ao cliente.
+
+## 🎯 Identidade Organizacional
+* **Missão**: Proporcionar soluções eficientes na gestão de serviços automotivos.
+* **Visão**: Ser referência em tecnologia para otimização de oficinas no estado de São Paulo.
+* **Valores**: Transparência, precisão técnica e compromisso com o cliente.
 
 ## 🚀 Funcionalidades Principais
-
-* **Dashboard Operacional**: Visualização de métricas como total de clientes, veículos e status de ordens pendentes ou concluídas.
-* **Gestão de Clientes e Funcionários**: Cadastro completo com campos para Nome, CPF e Telefone.
-* **Controle de Veículos**: Vinculação de placas a clientes específicos.
-* **Triagem e O.S.**: Registro de problemas relatados, diagnósticos técnicos e acompanhamento financeiro.
-* **Interface Responsiva**: Design adaptado para desktops e dispositivos móveis (Mobile First).
+* **Dashboard Executivo**: Resumo de metas e produtividade da oficina.
+* **Módulo de Triagem**: Diagnóstico detalhado para evitar erros no orçamento inicial.
+* **Gestão de O.S.**: Controle de status e valores de serviços em tempo real.
 
 ## 💻 Stack Tecnológica
 

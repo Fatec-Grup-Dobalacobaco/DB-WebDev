@@ -47,6 +47,8 @@ O **AutoCheck** é uma solução web desenvolvida para otimizar o fluxo de traba
 
 **Documentação do Projeto: Escrita do README.md e relatórios técnicos para facilitar a colaboração e apresentação do portfólio.**
 
+---
+
 ### Claudio Costa Responsavel por:
 
 **CRUD Completo: Funções para Criar, Ler, Atualizar e Deletar registros de todas as tabelas mapeadas no seu script SQL.**
@@ -59,6 +61,8 @@ O **AutoCheck** é uma solução web desenvolvida para otimizar o fluxo de traba
 
 **Implementação de Banco de Dados: Desenvolvimento do script SQL para criação de tabelas, chaves primárias e estrangeiras.**
 
+---
+
 ### Fernando de Melo:
 
 **CRUD Completo: Funções para Criar, Ler, Atualizar e Deletar registros de todas as tabelas mapeadas no seu script SQL.**
@@ -70,6 +74,8 @@ O **AutoCheck** é uma solução web desenvolvida para otimizar o fluxo de traba
 **Cálculo de O.S.: Lógica para somar valores de peças e mão de obra e atualizar o status da ordem de serviço para "Concluído".**
 
 **Normalização de Dados: Aplicação de regras para evitar redundância e garantir a integridade das informações no banco.**
+
+---
 
 ## Kauan de Oliveira:
 

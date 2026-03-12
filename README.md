@@ -79,7 +79,7 @@ O **AutoCheck** é um sistema completo de gestão para oficinas mecânicas, foca
 
 ---
 
-## Kauan de Oliveira:
+## Kauan Bruno:
 
 **CRUD Completo: Funções para Criar, Ler, Atualizar e Deletar registros de todas as tabelas mapeadas no seu script SQL.**
 
